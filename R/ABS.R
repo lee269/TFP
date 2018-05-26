@@ -10,8 +10,8 @@ sheets <- c("Sections A-S", "Section C", "Division 46", "Division 47", "Section 
 abs <- map2(here("data", "abssectionsas.xls"), sheets, read_ABS) %>% 
        reduce(bind_rows)
 
-# using tidyr::gather to convert to long form
-# if we dont impute all the * suppressed vals they will come in as NAs
+# using tidyr::gather to convert to long form if we dont impute all the *
+# suppressed vals they will come in as NAs, and they will get deleted
 abs_tidy <- abs %>% 
         gather(attribute, value, no_enterprises:stocks_increase, na.rm = TRUE)
 
