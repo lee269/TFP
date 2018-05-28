@@ -53,23 +53,23 @@ avggrowth <- tfpgrowth %>%
              group_by(Sector) %>% 
              summarise(avgprod = mean(yronyrprod))
 
-bullet1 <- paste("- In", 
-                 params$year,
-                 "the productivity of the food chain",
-                 updown(val, reference = "idpres"),
-                 "by",
-                 perc(val, 1),
-                 "per cent. In the same period that of the wider economy",
-                 updown(val),
-                 "by",
-                 perc(val, 1),
-                 "per cent. In the 10 years prior to",
-                 params$year,
-                 ", the average annual growth rate of the food chain was",
-                 perc(val, 1), 
-                 "per cent whereas the wider economy's was ",
-                 perc(val, 1),
-                 "per cent.")
+# bullet1 <- paste("- In", 
+#                  params$year,
+#                  "the productivity of the food chain",
+#                  updown(val, reference = "idpres"),
+#                  "by",
+#                  perc(val, 1),
+#                  "per cent. In the same period that of the wider economy",
+#                  updown(val),
+#                  "by",
+#                  perc(val, 1),
+#                  "per cent. In the 10 years prior to",
+#                  params$year,
+#                  ", the average annual growth rate of the food chain was",
+#                  perc(val, 1), 
+#                  "per cent whereas the wider economy's was ",
+#                  perc(val, 1),
+#                  "per cent.")
 
 ```
 

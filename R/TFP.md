@@ -13,8 +13,6 @@ Key messages
     food chain was £103 billion. This counted for about 9 per cent of
     the UK non-financial business economy
 
-decrease
-
 Overview
 --------
 
