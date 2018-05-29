@@ -14,7 +14,7 @@ ids <- tolower(c("L556", "L523", "L52U", "CBZW", "K37L", "MC35", "YBGB"))
 ids2 <- tolower(c("L556/mm23", "L523/mm23", "L52U/mm23", "CBZW/mm23", "K37L/ppi", "MC35/ppi"))
 series <- as.list(c(paste("/economy/inflationandpriceindices/timeseries/", ids2, sep = ""), "/economy/grossdomesticproductgdp/timeseries/ybgb/pn2"))
 froms <- as.list(rep(2005, times = length(series)))
-tos <- as.list(rep(2016, times = length(series)))
+tos <- as.list(rep(2017, times = length(series)))
 parameters <- list(series, froms, tos)
 
 

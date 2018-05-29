@@ -32,6 +32,7 @@ abs_tidy <- abs %>%
         gather(attribute, value, no_enterprises:stocks_increase, na.rm = TRUE)
 
 
+# write_csv(abs_tidy, here("data", "abs_tidy.csv"))
 
 
 gva <- abs_tidy %>% 
