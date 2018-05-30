@@ -2,13 +2,17 @@
 % Please edit documentation in R/deflators.R
 \name{deflators}
 \alias{deflators}
-\title{Title}
+\title{Get deflator data}
 \usage{
 deflators(series, from, to)
 }
 \arguments{
-\item{to}{}
+\item{series}{a vector of ONS CDID identifiers}
+
+\item{from}{a start year}
+
+\item{to}{an end year}
 }
 \description{
-Title
+Leverages read_ONS- it would be better to try and generalise this function
 }

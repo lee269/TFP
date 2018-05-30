@@ -7,8 +7,20 @@
 read_ASHE(file, sheet, year, category)
 }
 \arguments{
-\item{category}{}
+\item{file}{spreadsheet workbook containing ASHE data}
+
+\item{sheet}{worksheet tab to process}
+
+\item{year}{provide a year to add to the output dataset}
+
+\item{category}{provide a category to add to the dataset}
+}
+\value{
+a dataset of ASHE data
 }
 \description{
-Read in an ASHE data table
+written for table 4.9, maybe works with other downloads
+}
+\examples{
+read_ASHE("ASHE_T4_9.xls", "Full time", 2017, "fulltime")
 }

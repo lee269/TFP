@@ -1,8 +1,10 @@
-#' Title
+#' Get deflator data
 #'
-#' @param series
-#' @param from
-#' @param to
+#' Leverages read_ONS- it would be better to try and generalise this function
+#'
+#' @param series a vector of ONS CDID identifiers
+#' @param from a start year
+#' @param to an end year
 #'
 #' @return
 #' @export

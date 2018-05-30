@@ -8,7 +8,7 @@
 #' @param file spreadsheet file name
 #' @param sheet spreadsheet sheet name
 #'
-#' @return
+#' @return a data frame
 #' @export
 #'
 #' @examples

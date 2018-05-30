@@ -1,14 +1,17 @@
 #' Read in an ASHE data table
 #'
-#' @param file
-#' @param sheet
-#' @param year
-#' @param category
+#' written for table 4.9, maybe works with other downloads
 #'
-#' @return
+#' @param file spreadsheet workbook containing ASHE data
+#' @param sheet worksheet tab to process
+#' @param year provide a year to add to the output dataset
+#' @param category provide a category to add to the dataset
+#'
+#' @return a dataset of ASHE data
 #' @export
 #'
 #' @examples
+#' read_ASHE("ASHE_T4_9.xls", "Full time", 2017, "fulltime")
 read_ASHE <- function(file, sheet, year, category) {
 
   colnames <- c("sic_desc",

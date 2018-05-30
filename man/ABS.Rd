@@ -9,7 +9,13 @@ ABS(sheets)
 \arguments{
 \item{sheets}{a vector of spreadsheet tab names}
 }
+\value{
+a data frame
+}
 \description{
 Uses read_ABS to compile and concatenate a dataset from multiple tabs in a
 'standard' ABS workbook. The data is transformed to tidy (long) form.
+}
+\examples{
+ABS(read.csv("url_to_abs_data.xls", "Section C"))
 }

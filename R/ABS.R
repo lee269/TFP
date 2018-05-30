@@ -5,10 +5,11 @@
 #'
 #' @param sheets a vector of spreadsheet tab names
 #'
-#' @return
+#' @return a data frame
 #' @export
 #'
 #' @examples
+#' ABS(read.csv("url_to_abs_data.xls", "Section C"))
 ABS <- function(sheets) {
 
   # load up functions

@@ -11,6 +11,9 @@ read_ABS(file, sheet)
 
 \item{sheet}{spreadsheet sheet name}
 }
+\value{
+a data frame
+}
 \description{
 Expects a 'standard' ABS spreadsheet as published at (link). Applies standard
 column names and variable types, skips the first 8 header lines, and removes

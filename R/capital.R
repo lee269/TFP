@@ -1,9 +1,18 @@
+#' Get capital data
+#'
+#' Leverages read_ONS - it would be better to try and generalise this function
+#'
+#' @param series a vector of ONS CDID identifiers for capital stocks
+#' @param from a start year
+#' @param to an end year
+#'
+#' @return
+#' @export
+#'
+#' @examples
 capital <- function(series, from, to){
 
-library(here)
-library(tidyverse)
 
-source(here("R", "read_ONS.R"))
 
 # an example of how to use read_ONS
 # x <- read_ONS(seriesuri = "/economy/nationalaccounts/uksectoraccounts/timeseries/mhy2/capstk", 1998, 2016)

@@ -10,6 +10,7 @@
 #' @export
 #'
 #' @examples
+#' read_ONS("=/economy/inflationandpriceindices/timeseries/l55o/mm23", 2005, 2016)
 read_ONS <- function(seriesuri, from, to){
 
   url <- paste("https://www.ons.gov.uk/generator?format=csv&uri=",
