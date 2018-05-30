@@ -1,9 +1,16 @@
+#' Read in an ASHE data table
+#'
+#' @param file
+#' @param sheet
+#' @param year
+#' @param category
+#'
+#' @return
+#' @export
+#'
+#' @examples
 read_ASHE <- function(file, sheet, year, category) {
-  
-  library(readxl)
-  library(tidyr)
-  library(dplyr)
-  
+
   colnames <- c("sic_desc",
                 "sic",
                 "no_jobs",
@@ -21,7 +28,7 @@ read_ASHE <- function(file, sheet, year, category) {
                 "pcile_75",
                 "pcile_80",
                 "pcile_90")
-  
+
   coltypes <- c("text",
                 "text",
                 "numeric",
@@ -39,14 +46,14 @@ read_ASHE <- function(file, sheet, year, category) {
                 "numeric",
                 "numeric",
                 "numeric")
-  
-  x <- read_excel(path = file, sheet = sheet, range = cell_cols("A:Q"), col_names = colnames, col_types = coltypes)
-  
-  x <- x %>% 
-    filter(sic != is.na(sic) & sic != "Code") %>% 
-    mutate(year = year,
-           category = category)
-  
+
+  x <- readxl::read_excel(path = file, sheet = sheet, range = cell_cols("A:Q"), col_names = colnames, col_types = coltypes)
+
+  x <- x %>%
+    dplyr::filter(sic != is.na(sic) & sic != "Code") %>%
+    dplyr::mutate(year = year,
+                  category = category)
+
   return(x)
-  
+
 }

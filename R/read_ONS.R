@@ -1,5 +1,17 @@
+#' Extract an ONS data series
+#'
+#' creates a url which returns a yearly series of ONS data
+#'
+#' @param seriesuri the URI of the data series
+#' @param from the start year
+#' @param to the end year
+#'
+#' @return a dataframe of an ONS data series
+#' @export
+#'
+#' @examples
 read_ONS <- function(seriesuri, from, to){
-  
+
   url <- paste("https://www.ons.gov.uk/generator?format=csv&uri=",
                seriesuri,
                "&series=&fromYear=",
@@ -8,11 +20,11 @@ read_ONS <- function(seriesuri, from, to){
                to,
                "&frequency=years",
                sep = "")
-  
+
   x <- read.csv(url, header = FALSE)
-  
-  x
-  
+
+  return(x)
+
 }
 
 
