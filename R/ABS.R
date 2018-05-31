@@ -3,6 +3,7 @@
 #' Uses read_ABS to compile and concatenate a dataset from multiple tabs in a
 #' 'standard' ABS workbook. The data is transformed to tidy (long) form.
 #'
+#' @param file an ABS workbook
 #' @param sheets a vector of spreadsheet tab names
 #'
 #' @return a data frame
@@ -10,7 +11,7 @@
 #'
 #' @examples
 #' ABS(read.csv("url_to_abs_data.xls", "Section C"))
-ABS <- function(sheets) {
+ABS <- function(file, sheets) {
 
   # load up functions
   # source(here("R", "read_ABS.R"))
@@ -21,7 +22,7 @@ ABS <- function(sheets) {
 
   # using purrr map-reduce to create a list of data frames and bind them together
   # into one
-  abs <- purrr::map2(here("data", "abssectionsas.xls"), sheets, read_ABS) %>%
+  abs <- purrr::map2(file, sheets, read_ABS) %>%
          purrr::reduce(bind_rows)
 
   # using tidyr::gather to convert to long form - if we dont impute all the *

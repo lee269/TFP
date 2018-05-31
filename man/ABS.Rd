@@ -4,9 +4,11 @@
 \alias{ABS}
 \title{Compliles a tidy dataset from ABS data as read in using read_ABS}
 \usage{
-ABS(sheets)
+ABS(file, sheets)
 }
 \arguments{
+\item{file}{an ABS workbook}
+
 \item{sheets}{a vector of spreadsheet tab names}
 }
 \value{
