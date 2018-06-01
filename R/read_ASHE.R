@@ -5,7 +5,7 @@
 #' @param file spreadsheet workbook containing ASHE data
 #' @param sheet worksheet tab to process
 #' @param year provide a year to add to the output dataset
-#' @param category provide a category to add to the dataset
+#' @param category provide a category to add to the dataset, eg "Full time"
 #'
 #' @return a dataset of ASHE data
 #' @export

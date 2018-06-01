@@ -13,7 +13,7 @@ read_ASHE(file, sheet, year, category)
 
 \item{year}{provide a year to add to the output dataset}
 
-\item{category}{provide a category to add to the dataset}
+\item{category}{provide a category to add to the dataset, eg "Full time"}
 }
 \value{
 a dataset of ASHE data
