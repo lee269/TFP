@@ -14,52 +14,52 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(tidyverse)
+library(TFP)
+
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+##Annual Business Survey data
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+###1. Update the ABS data
 
-## Vignette Info
+1. Get the latest ABS data from ONS. The latest release can be found [here](https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/uknonfinancialbusinesseconomy/previousReleases). The spreadsheet we need is the one for [Sections A - S](https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/datasets/uknonfinancialbusinesseconomyannualbusinesssurveysectionsas/current).
+2. The spreadsheet need to be manually adjusted to impute suppressed values before proceeding.
+3. Then collate the latest data for a sector using `ABS`.
+4. Historic ABS data is included in the package dataset `abs_historic`. 
+5. Add the latest data to `abs_historic`, removing any duplicate years. 
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+```{r abs_processing, warning=FALSE}
+# ABS workflow
 
-## Styles
+# reshape the historic data
+abs_hist <- abs_historic %>% 
+               filter(sector == "food manufacturing") %>% 
+               select(-c(sector, sic_desc)) %>% 
+               gather(year, val, num_range("", 1900:2100)) %>% 
+               spread(attribute, val) %>% 
+               mutate(year = as.numeric(year))
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+head(abs_hist)
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+# read in the latest
+manufacturing <- ABS(file = "~/TFP_code/data/abssectionsas.xls",
+                     sheets = c("Section C"),
+                     siccodes = c("10", "11")) %>% 
+                select(year, capex, employment_costs, employment_pit, gva, purchases, turnover)
 
-## Figures
+head(manufacturing)
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+# bind the latest data to the older data
+manu_latest <- abs_hist %>% 
+                   filter(year < min(manufacturing$year)) %>% 
+                   bind_rows(manufacturing)
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+###2. update the input weights
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+1. We can produce the latest input weights using `input_weights`
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))

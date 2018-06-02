@@ -3,6 +3,7 @@
 export(ABS)
 export(capital)
 export(deflators)
+export(input_weights)
 export(read_ABS)
 export(read_ASHE)
 export(read_AUK)

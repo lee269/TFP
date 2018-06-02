@@ -10,17 +10,35 @@
 #' @export
 #'
 #' @examples
-#' read_ONS("=/economy/inflationandpriceindices/timeseries/l55o/mm23", 2005, 2016)
+#' read_ONS("/economy/inflationandpriceindices/timeseries/l55o/mm23", 2005, 2016)
 read_ONS <- function(seriesuri, from, to){
 
-  url <- as.list(paste("https://www.ons.gov.uk/generator?format=csv&uri=",
-               seriesuri,
-               "&series=&fromYear=",
-               from,
-               "&toYear=",
-               to,
-               "&frequency=years",
-               sep = ""))
+  if (length(seriesuri) == 1) {
+    url <- paste("https://www.ons.gov.uk/generator?format=csv&uri=",
+                 seriesuri,
+                 "&series=&fromYear=",
+                 from,
+                 "&toYear=",
+                 to,
+                 "&frequency=years",
+                 sep = "")
+
+    x <- read.csv(url)
+    colnames(x)[1] <- "year"
+    colnames(x) <- safe_names(colnames(x))
+    x <- x[-c(1:6), ]
+
+    return(x)
+
+  } else {
+    url <- as.list(paste("https://www.ons.gov.uk/generator?format=csv&uri=",
+                         seriesuri,
+                         "&series=&fromYear=",
+                         from,
+                         "&toYear=",
+                         to,
+                         "&frequency=years",
+                         sep = ""))
 
   x <- purrr::map(url, read.csv) %>%
        purrr::reduce(dplyr::bind_cols)
@@ -32,6 +50,8 @@ read_ONS <- function(seriesuri, from, to){
   x2 <- x2[-c(1:6), ]
 
   return(x2)
+  }
+
 
 }
 

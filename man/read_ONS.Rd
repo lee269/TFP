@@ -20,5 +20,5 @@ a dataframe of an ONS data series
 creates a url which returns a yearly series of ONS data
 }
 \examples{
-read_ONS("=/economy/inflationandpriceindices/timeseries/l55o/mm23", 2005, 2016)
+read_ONS("/economy/inflationandpriceindices/timeseries/l55o/mm23", 2005, 2016)
 }

@@ -4,12 +4,14 @@
 \alias{ABS}
 \title{Compliles a tidy dataset from ABS data as read in using read_ABS}
 \usage{
-ABS(file, sheets)
+ABS(file, sheets, siccodes)
 }
 \arguments{
 \item{file}{an ABS workbook}
 
 \item{sheets}{a vector of spreadsheet tab names}
+
+\item{siccodes}{a vector of SIC codes (as characters)}
 }
 \value{
 a data frame
@@ -19,5 +21,5 @@ Uses read_ABS to compile and concatenate a dataset from multiple tabs in a
 'standard' ABS workbook. The data is transformed to tidy (long) form.
 }
 \examples{
-ABS(read.csv("url_to_abs_data.xls", "Section C"))
+ABS("abs_data.xls", c("Section C"), c("10", "11") )
 }

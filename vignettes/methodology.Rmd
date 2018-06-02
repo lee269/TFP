@@ -1,0 +1,259 @@
+---
+title: "Methods and Assumptions"
+author: "David Lee"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Methods and Assumptions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Total Factor Productivity of the Food Chain
+
+This is a methodological note accompanying the Official Statistics release published on 27th July 2017. The original research that forms the basis of the release was published in May 2006 and is available on the archived Defra website here: [UK Food Chain Productivity Incorporating External Impacts](http://webarchive.nationalarchives.gov.uk/20130402151656/http:/archive.defra.gov.uk/evidence/economics/foodfarm/reports/documents/ukfoodchain.pdf).
+
+This document provides an overview of the method and explains any changes to the method since the original research was published. It sets out:
+
+## 1.        Introduction
+
+Total factor productivity (TFP) relates a change in output to changes in major inputs of labour, intermediate purchases and capital consumption, and is a measure of efficiency. The release presents measures of TFP within the food sector downstream from farming divided into: manufacturing, wholesale, retail and catering. A measure of the TFP of the wider economy is included for comparison purposes.
+
+Productivity growth is linked to the potential competitiveness of companies. Growth in productivity means businesses can meet their commitments, for example to employees, shareholders, and governments, and retain or improve their competiveness.
+
+There are benefits to society from a rise in productivity as it raises living standards. Productivity is an underlying indicator of sustainable resource use but it cannot be used a single measure of sustainable growth.
+
+## 2.        Description of food chain sectors
+
+In SIC2007 the **food manufacturing** sector comprises of nine main categories including processing and preserving meat, dairy, fruit and vegetables, oils, bread, biscuits and cakes, and confectionary. Animal feed manufacturing is included, covering both farm animal feed and pet food, and representing 7% of total turnover in food and drink manufacturing in 2015. The drink manufacturing sector includes alcoholic beverages and soft drinks and mineral waters.
+
+**Food and drink wholesaling** consists of the buying, storage and reselling of food either manufactured or freshly produced. Wholesale of tobacco products (46.35) is not included, but SIC code 46.17 &quot;Agents involved in the sale of food, beverages and tobacco&quot; is included. This group includes wholesalers that trade on behalf of others on a fee or contract basis and their turnover was 4% of that of 46.3 &quot;Wholesale of food, beverages and tobacco&quot; in 2015.
+
+**Food and drink retailing** is defined as the sale of food within both non-specialised stores (e.g. supermarkets), 47.11, and specialised stores such as butchers and bakers, 47.11 and 47.81. The sale of tobacco products is subtracted from the specialised stores using 47.26 and then subtracted from the non-specialised stores later on using a ratio for food and drink.
+
+**Non-residential catering** (NRC) consists of restaurants and bars involved in preparation and serving of food, alongside canteens and catering services. Hotels are not included.
+
+Table 1 Standard Industrial Classification sectors used in the model
+
+| Sector | Standard Industrial Classification | SIC2007 |
+| --- | --- | --- |
+| Manufacturing | Manufacture of food products Manufacture of beverages | 10 11 |
+| Wholesaling | Wholesale of food, beverages and tobacco **minus** Wholesale of tobacco products **plus** Agents involved in the sale of food, beverages and tobacco | 46.3 - 46.35 + 46.17 |
+| Retailing | Retail sale of food, beverages and tobacco in specialised store **minus** Retail sale of tobacco products in specialised stores **plus** Retail sale in non-specialised stores with food, beverages or tobacco predominating **plus** Retail sale via stalls and markets of food, beverages and tobacco products | 47.2 47.26 47.11 47.81 |
+| Non-residential catering | Food and beverage service activities | 56 |
+
+## 3.        Defining Total Factor Productivity
+
+Total factor productivity is a measure of the efficiency with which inputs are converted into outputs. The method incorporates only the inputs and outputs that are associated with monetary transactions. It does not incorporate external effects on society and the environment. The inputs are labour, capital expenditure and purchases. The output is the volume of sales. Total factor productivity is the &#39;volume of outputs&#39; divided by &#39;the volume of inputs&#39;. TFP increases if the volume of outputs increases while the volume of inputs stays the same. It increases if the volume of inputs decreases while the volume of outputs stays the same.
+
+It is not possible to add the volumes of different types of inputs together, but year on year changes in the volumes of different types of inputs can be used. For this reason the exact level of total factor productivity is not calculated but year on year changes in total factor productivity are identified. Thus the measure is an indicator that shows the trends.
+
+
+### Weights used to combine inputs
+
+According to index numbers theory it is appropriate to use the values of costs of the inputs as the weights when forming the weighted average of their trends. The method uses Fisher Indices with annual rebasing and chain-linking to keep the weights up to date. The full description of the indexing procedure used is included in the original research report Page 3.
+
+A weighted average of the trends in the inputs is formed to combine trends in labour, capital consumption and purchases. The weights are the current price (not adjusted for inflation) costs of the three inputs which vary by industry sector as outlined in Table 2.
+
+Table 2: Input weights: the proportions of labour, capital expenditure and purchases per industry sector in 2015
+
+| | Capital expenditure(a) | Purchases | Labour costs |
+| --- | --- | --- | --- |
+| Manufacturing | 0.04 | 0.81 | 0.15 |
+| Wholesale | 0.01 | 0.92 | 0.07 |
+| Retail | 0.04 | 0.78 | 0.18 |
+| Catering | 0.08 | 0.58 | 0.34 |
+| Wider economy | 0.05 | 0.77 | 0.18 |
+
+(a) The weight used for manufacturing is MI3N Manufacture of food, beverages and tobacco from the ONS Capital Stocks series. For all other sectors ABS Total net capital expenditure is used.
+
+For all sectors, purchases have the greatest share of costs so they have the greatest weight when forming the combined trend. Labour costs only account for 7% percent of wholesale inputs but they comprise a third of catering sector costs. Therefore an increase in labour costs will have less of an overall affect on the wholesale sector than the same increase would have on catering, if all other factors stay the same.
+
+## 4.        Identification of data sources for inputs and outputs
+
+Volumes of high level aggregates of outputs or inputs are not collected directly in surveys because of the impracticality of adding volumes of different types of output or input together. Instead, current price values are the starting point and these are then converted to volumes by removing the effects of price changes. This approach is taken for the volume of output, the volume of purchases and the volume of capital flow. For labour, there are direct estimates of volume in terms of hours worked.
+
+Data is not always available at the SIC levels outlined in Table 1, and some assumptions have had to be made about how trends in for example the wholesale sector as a whole apply to food wholesaling as discussed below.
+
+Table 3 shows the data sources selected for the model. The ABS estimates cover all UK businesses registered for Value Added Tax (VAT) and/or Pay as you Earn (PAYE).
+
+To convert turnover and purchases from price to quantity deflators are used for each sector as outlined in table 4.
+
+Table 3 Data sources for inputs and outputs
+
+|   | Unit | TFP Calculation Component | Data source |
+| --- | --- | --- | --- |
+| Output |   |   |   |
+| Turnover | £ | Total Turnover (Sales of Products) | ABS |
+|   | £ | Deflated to 2000 prices | Deflators vary by industry sector (see Table 4) |
+| Inputs |   |   |   |
+| Labour | £ | Total employment costs | ABS |
+|   | Hours worked | Annual Hours Worked adjusted by industry estimates for fulltime and part-time hours | ABS/BRES employment numbers weighted by ASHE |
+| Capital | £ | Capital Expenditure | ABS |
+|   | £ | Consumption of Fixed Capital: by Industry at Chained Volume Measure | ONS Capital Stocks |
+| Purchases | £ | Total purchases of goods, materials and services | ABS |
+| £ | Deflated to 2000 prices | Deflators vary by industry sector (see Table 4) |
+
+**Turnover**
+
+Food retail turnover will include sales receipts from non-food retail. Since the introduction of SIC2007 this includes petrol sold at supermarkets alongside clothes, electricals, magazines and newspapers and tobacco. The ABI/ABS produce a breakdown of retail turnover (inclusive of VAT) by product category from which it is possible to estimate the proportion of turnover from non-food sales. In 2014, 38% of food sector retail came from non-food items. Total turnover from ABI/ABS is adjusted to remove the non-food sales. Purchases are also adjusted by the same proportion as described below. See also turnover deflators Table 4.
+
+**Labour**
+
+Numbers of employees from the ABI/ABS Survey are converted into hours worked using hours per week estimates from the Annual Survey of Hours and Earnings (ASHE). ASHE gives estimates of numbers of jobs within each SIC but these categories do not exactly match the level of detail available in ABI/ABS. Median rates are a weekly average and therefore assumptions need to be made on the number of weeks worked per year to create an annual series. The legal minimum number of weeks allowed for paid leave is used. From 2000 to 2008, four weeks including public holidays is used and for 2009 onwards 5.6 weeks is assumed. Employment estimates ABI/ABS are point in time estimates, not seasonally adjusted.
+
+All hours worked are treated as being of the same quality. The skill level of the workforce and changes in skill level are not accounted for and will not affect the resulting productivity measure.
+
+**Capital Input**
+
+Companies have a stock of capital made up of assets of differing ages but it is not a direct input into the production process. It is the &#39;flow of physical capital services&#39; which is needed for the total factor productivity measure. The flow is not directly observable but can be estimated using a perpetual inventory model that requires estimated lifetimes and depreciation rates for each type of capital asset. ONS publish datasets on the consumption of fixed capital by industry, but not at the SIC level required by the model apart from food manufacturing (but this includes tobacco).
+
+The rate of change of capital stocks in distribution sector as a whole is assumed to be the same as that for both food wholesaling and food retailing. Hotels and restaurants capital consumption is used for NRC. The chained volume measure is used which provides values in constant prices in respect to a base year.
+
+The weight used for food and drink manufacturing is MI3N Manufacture of food, beverages and tobacco from the ONS Capital Stocks series. For all other sectors Total net capital expenditure values in real terms are taken from ABI/ABS Survey at SIC code level to form the weights.
+
+Purchases
+
+The retail sector purchases include non-food purchases. There is no data source that directly measures the proportion of non-food retail purchases. It is assumed that the proportion of purchases that are non-food is the same as the proportion of retail turnover that is made up of non-food sales.
+
+## 5.        Deflators
+
+The effects of changing (usually rising) prices need to be removed from the current price trends. Appropriate price indices are selected to divide in to the current price indices. This is particularly important in the food chain because prices can change at different rates, for example food price inflation (CPI) lagged behind general inflation for many years until late 2007 where the situation was reversed.
+
+**Table 4: Purchases (inputs) and turnover (output) deflators**
+
+| Sector | Purchases deflators | Turnover deflators |
+| --- | --- | --- |
+| Food manufacture | PPI for food and drink purchases (MC35) | PPI output of food products (K37L). |
+| Food retail | PPI Output of food products (K37L) and the Agricultural Price Index (retail direct). Their shares are weighted by the proportion of fresh and processed food sold within the ABI/ABS retail classification. | CPI Food (D7BU) and CPI alcoholic drinks (D7CA). These are weighted by the split in sale of food and alcoholic drinks in ABI/ABS. |
+| Food Wholesale | Geometric mean of retail and manufacturing sectors. | Geometric mean of retail and manufacturing sectors. |
+| Non residential catering | GDP deflator | CPI catering (D7CW) and CPI alcoholic drinks (D7CA) weighted by their split within the sale of retail food and alcoholic drinks. |
+| Wider economy | GDP deflator | GDP deflator |
+
+Food manufacture deflators
+
+The Producer Price Index (PPI) is a monthly survey that measures the price changes of goods bought and sold by UK manufacturers.
+
+The turnover deflator for food manufacture is used for the purchases deflator for food retail. To simplify the model the &#39;food products&#39; series is used, a more inclusive estimate would be a weighted average of the three series:
+
+- .Food products K37L
+- .Soft drinks, mineral waters and other bottled waters JU5C
+- .Alcoholic beverages, including duty K38U
+
+**Food retail deflators**
+
+Retailing purchases deflator does not cover the divide between UK and foreign produced raw materials, which would have different price movements but as the detailed data on quantities purchased from other countries is not available it is not possible. By adjusting the turnover and output by the proportion of non-food items that are sold, it is possible to minimise the distortion caused by non-food sales.
+
+Food wholesale deflators
+
+The geometric mean is the square root of the food manufacturing value multiplied by food retail.
+
+
+**Non residential catering**  **deflators**
+
+CPI catering and CPI alcoholic drinks are used, weighted by their split within the sale of retail food and beverages. This assumes that the ratio of sales of food to alcoholic drinks is the same in catering as retail. Family Food data on purchases outside the home shows that this may not be the case with 24% of spending on eating out being on alcoholic drinks compared 11% of spending on household supplies.
+
+**Wider economy deflators**
+
+The measure used does not represent the full economy but rather non-public sector industries that are covered by the ABI/ABS. The main exclusions are financial sector and agriculture. **GDP Deflator is the m** easure of domestically generated inflation. Further details are available [here](https://www.gov.uk/government/collections/gdp-deflators-at-market-prices-and-money-gdp).
+
+## 6.        Quality changes
+
+excludes quality changes
+
+includes quality changes
+
+Quality improvements in products can be measured as increases in output. Deflating by price indices ensures that most quality changes are captured as volume changes.
+
+
+
+Change in current price value **=** change in volume **x** change in price
+
+Retail productivity is possibly depressed by the omission of the non-market benefits offered by supermarkets, such as longer opening hours, and a greater product mix offered within stores. If more of the inputs are being spent improving the shopping environment then it will appear in the measure as inefficient use of these additional inputs and productivity will decrease.
+
+## 7.        Changes to methodology since 2006
+
+Revisions to the methodology have been made mainly to take into account changes in the source data.
+
+### a) Revision to SIC2007 from SIC2003 for 2008 data onwards
+
+The introduction of SIC2007 is the first major revision of the classification structure since 1992. The main difference between SIC2003 and SIC2007 that affects the productivity indicator is the reclassification of &#39;sale of automotive fuel&#39; so that it is now classified as a retail activity. Previously, sales of fuel were considered part of the motor trade but now fuel sold through major supermarkets is included within the retail turnover data. They have been adjusted for as described in section 5. The producer price index uses SIC2007 for 2009 onwards
+
+### b) Change in the ABI (Annual Business Inquiry) to the Annual Business Survey (ABS) and Business Register of Employment Survey (BRES)
+
+Previously average employment estimates were used, now point in time estimates are used throughout the series. UK 4 digit employment figures are not yet available for all industry sectors and drinks manufacturing estimate has been suppressed. Therefore some estimates are made to fill the gaps assuming that the rate of change year on year in employees all jobs series is the same as for the BRES series.
+
+### c) Change of method for rate of change of capital stocks
+
+The flow of capital stocks had previously been estimated using a perpetual inventory method (PIM) within the model; this has been amended to use the rate of change in published capital consumption tables as explained in page 5 &#39;capital input&#39;.
+
+### d) Changes to deflators used
+
+For the retail deflator the weighting of mostly raw compared to mostly processed has been changed to use API/APS retail sales data rather than the volume of sales in specialist shops: greengrocers, butchers and fishmongers.
+
+The retail turnover and non-residential catering sector deflators were changed from RPI to the Consumer Price Index (CPI).
+
+Previously Agriculture Price Index (API) all items was used as part of the equation to deflate retail purchases (inputs). This has been amended to solely include four API elements: animals for slaughter and export, vegetables, potatoes, and fruit.
+
+Previously all items RPI had been used for wider economy turnover deflator; this has been changed to GDP deflator.
+
+From July 2015 the definitions of the sectors are the same as Defra&#39;s Food Statistics Pocketbook. These definitions are explained in Table 1, page 2. These changes mainly affect retail and wholesale.
+
+### e) Changes to retail purchases and turnover
+
+From 2008 onwards retail sales of motor fuel at supermarkets are included in the ABS data (arising from the change to SIC2007) representing a discontinuity in the series. They are adjusted for by removing the value of sales from turnover and proportionally the same amount from purchases in the retail sector.
+
+## 8.        Reliability
+
+The quality of the calculation is dependent on the quality of the source data, in particular the Annual Business Inquiry/Annual Business Survey. ONS publish some quality estimates for the ABI and ABS for certain industry sectors. Based on these estimates, it is possible to provide an indication of the reliability of the calculation (see external references for ONS website address).
+
+In general, the trends revealed by the indicators are reliable but individual year on year changes are subject to sampling errors. The sampling error of a change in output between two consecutive years may exceed the change itself, especially when the change is small. For example, a change in output of 4% would have a standard error of the order of 15% to 25% of the change. There are similar errors associated with measurement of the inputs and with price deflation, although errors are not simply added together but balance out to some extent.
+
+External references
+
+[Annual Business Survey and Annual Business Inquiry](http://www.ons.gov.uk/ons/rel/abs/annual-business-survey/index.html)
+
+[Standard Industrial Classification (SIC) Archive](http://www.ons.gov.uk/ons/guide-method/classifications/archived-standard-classifications/uk-standard-industrial-classification-1992--sic92-/index.html)
+
+[SIC 2007 Details](http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/standard-industrial-classification/index.html)
+
+[Capital Stocks, Capital Consumption and Non-Financial Balance Sheets](http://www.ons.gov.uk/ons/rel/cap-stock/capital-stock--capital-consumption/index.html)
+
+[GDP deflator](https://www.gov.uk/government/collections/gdp-deflators-at-market-prices-and-money-gdp)
+
+[Producer price index](http://www.ons.gov.uk/ons/rel/ppi2/producer-price-index/index.html)
+
+[Annual Survey of Hours and Earnings](http://www.ons.gov.uk/ons/rel/ashe/annual-survey-of-hours-and-earnings/index.html)
+
+[Official guidance on legal minimum holiday entitlement](https://www.gov.uk/holiday-entitlement-rights)
+
+## Glossary of economic terms
+
+Current prices
+
+Prices not expressed in terms of the base year i.e. in today&#39;s terms.
+
+Constant prices
+
+A series expressing value in terms of the prices of a single year, removing the effects of inflation.
+
+**Real terms**
+
+Figures that have been adjusted for changes in the purchasing power of money.
+
+## Contact details for enquiries
+
+David Lee
+
+Defra, Area 1A Nobel House, 17 Smith Square, London SW1P 3JR
+
+Tel: +44 (0) 208 026 3006
+
+Email: [david.lee@defra.gsi.gov.uk](mailto:david.lee@defra.gsi.gov.uk)
