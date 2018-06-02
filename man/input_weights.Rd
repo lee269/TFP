@@ -2,13 +2,25 @@
 % Please edit documentation in R/input_weights.R
 \name{input_weights}
 \alias{input_weights}
-\title{Title}
+\title{calculate input weights for a sector}
 \usage{
 input_weights(data, capital, purchases, employment)
 }
 \arguments{
-\item{employment}{}
+\item{data}{a dataset containing current price data}
+
+\item{capital}{the capital variable}
+
+\item{purchases}{the purchases variable}
+
+\item{employment}{the employment variable}
+}
+\value{
+a dataset of input weights
 }
 \description{
-Title
+calculate input weights for a sector
+}
+\examples{
+
 }
