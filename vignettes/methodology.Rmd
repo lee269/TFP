@@ -22,7 +22,7 @@ This is a methodological note accompanying the Official Statistics release publi
 
 This document provides an overview of the method and explains any changes to the method since the original research was published. It sets out:
 
-## 1.        Introduction
+## 1. Introduction
 
 Total factor productivity (TFP) relates a change in output to changes in major inputs of labour, intermediate purchases and capital consumption, and is a measure of efficiency. The release presents measures of TFP within the food sector downstream from farming divided into: manufacturing, wholesale, retail and catering. A measure of the TFP of the wider economy is included for comparison purposes.
 
@@ -30,7 +30,7 @@ Productivity growth is linked to the potential competitiveness of companies. Gro
 
 There are benefits to society from a rise in productivity as it raises living standards. Productivity is an underlying indicator of sustainable resource use but it cannot be used a single measure of sustainable growth.
 
-## 2.        Description of food chain sectors
+## 2. Description of food chain sectors
 
 In SIC2007 the **food manufacturing** sector comprises of nine main categories including processing and preserving meat, dairy, fruit and vegetables, oils, bread, biscuits and cakes, and confectionary. Animal feed manufacturing is included, covering both farm animal feed and pet food, and representing 7% of total turnover in food and drink manufacturing in 2015. The drink manufacturing sector includes alcoholic beverages and soft drinks and mineral waters.
 
@@ -40,7 +40,7 @@ In SIC2007 the **food manufacturing** sector comprises of nine main categories i
 
 **Non-residential catering** (NRC) consists of restaurants and bars involved in preparation and serving of food, alongside canteens and catering services. Hotels are not included.
 
-Table 1 Standard Industrial Classification sectors used in the model
+**Table 1 Standard Industrial Classification sectors used in the model**
 
 | Sector | Standard Industrial Classification | SIC2007 |
 | --- | --- | --- |
@@ -49,12 +49,15 @@ Table 1 Standard Industrial Classification sectors used in the model
 | Retailing | Retail sale of food, beverages and tobacco in specialised store **minus** Retail sale of tobacco products in specialised stores **plus** Retail sale in non-specialised stores with food, beverages or tobacco predominating **plus** Retail sale via stalls and markets of food, beverages and tobacco products | 47.2 47.26 47.11 47.81 |
 | Non-residential catering | Food and beverage service activities | 56 |
 
-## 3.        Defining Total Factor Productivity
+## 3. Defining Total Factor Productivity
 
 Total factor productivity is a measure of the efficiency with which inputs are converted into outputs. The method incorporates only the inputs and outputs that are associated with monetary transactions. It does not incorporate external effects on society and the environment. The inputs are labour, capital expenditure and purchases. The output is the volume of sales. Total factor productivity is the &#39;volume of outputs&#39; divided by &#39;the volume of inputs&#39;. TFP increases if the volume of outputs increases while the volume of inputs stays the same. It increases if the volume of inputs decreases while the volume of outputs stays the same.
 
-It is not possible to add the volumes of different types of inputs together, but year on year changes in the volumes of different types of inputs can be used. For this reason the exact level of total factor productivity is not calculated but year on year changes in total factor productivity are identified. Thus the measure is an indicator that shows the trends.
+It is not possible to add the volumes of different types of inputs together, but year on year changes in the volumes of different types of inputs can be used. Thus:
 
+${Change\ in\ total\ factor\ productivity} = \frac{Change\ in\ volume\ of\ outputs}{Change\ in\ volume\ of\ inputs}$
+
+For this reason the exact level of total factor productivity is not calculated but year on year changes in total factor productivity are identified. Thus the measure is an indicator that shows the trends.
 
 ### Weights used to combine inputs
 
@@ -62,7 +65,7 @@ According to index numbers theory it is appropriate to use the values of costs o
 
 A weighted average of the trends in the inputs is formed to combine trends in labour, capital consumption and purchases. The weights are the current price (not adjusted for inflation) costs of the three inputs which vary by industry sector as outlined in Table 2.
 
-Table 2: Input weights: the proportions of labour, capital expenditure and purchases per industry sector in 2015
+**Table 2: Input weights: the proportions of labour, capital expenditure and purchases per industry sector in 2015**
 
 | | Capital expenditure(a) | Purchases | Labour costs |
 | --- | --- | --- | --- |
@@ -76,7 +79,7 @@ Table 2: Input weights: the proportions of labour, capital expenditure and purch
 
 For all sectors, purchases have the greatest share of costs so they have the greatest weight when forming the combined trend. Labour costs only account for 7% percent of wholesale inputs but they comprise a third of catering sector costs. Therefore an increase in labour costs will have less of an overall affect on the wholesale sector than the same increase would have on catering, if all other factors stay the same.
 
-## 4.        Identification of data sources for inputs and outputs
+## 4. Identification of data sources for inputs and outputs
 
 Volumes of high level aggregates of outputs or inputs are not collected directly in surveys because of the impracticality of adding volumes of different types of output or input together. Instead, current price values are the starting point and these are then converted to volumes by removing the effects of price changes. This approach is taken for the volume of output, the volume of purchases and the volume of capital flow. For labour, there are direct estimates of volume in terms of hours worked.
 
@@ -86,7 +89,7 @@ Table 3 shows the data sources selected for the model. The ABS estimates cover a
 
 To convert turnover and purchases from price to quantity deflators are used for each sector as outlined in table 4.
 
-Table 3 Data sources for inputs and outputs
+**Table 3 Data sources for inputs and outputs**
 
 |   | Unit | TFP Calculation Component | Data source |
 | --- | --- | --- | --- |
@@ -119,11 +122,11 @@ The rate of change of capital stocks in distribution sector as a whole is assume
 
 The weight used for food and drink manufacturing is MI3N Manufacture of food, beverages and tobacco from the ONS Capital Stocks series. For all other sectors Total net capital expenditure values in real terms are taken from ABI/ABS Survey at SIC code level to form the weights.
 
-Purchases
+**Purchases**
 
 The retail sector purchases include non-food purchases. There is no data source that directly measures the proportion of non-food retail purchases. It is assumed that the proportion of purchases that are non-food is the same as the proportion of retail turnover that is made up of non-food sales.
 
-## 5.        Deflators
+## 5. Deflators
 
 The effects of changing (usually rising) prices need to be removed from the current price trends. Appropriate price indices are selected to divide in to the current price indices. This is particularly important in the food chain because prices can change at different rates, for example food price inflation (CPI) lagged behind general inflation for many years until late 2007 where the situation was reversed.
 
@@ -137,24 +140,23 @@ The effects of changing (usually rising) prices need to be removed from the curr
 | Non residential catering | GDP deflator | CPI catering (D7CW) and CPI alcoholic drinks (D7CA) weighted by their split within the sale of retail food and alcoholic drinks. |
 | Wider economy | GDP deflator | GDP deflator |
 
-Food manufacture deflators
+**Food manufacture deflators**
 
 The Producer Price Index (PPI) is a monthly survey that measures the price changes of goods bought and sold by UK manufacturers.
 
 The turnover deflator for food manufacture is used for the purchases deflator for food retail. To simplify the model the &#39;food products&#39; series is used, a more inclusive estimate would be a weighted average of the three series:
 
-- .Food products K37L
-- .Soft drinks, mineral waters and other bottled waters JU5C
-- .Alcoholic beverages, including duty K38U
+- Food products K37L
+- Soft drinks, mineral waters and other bottled waters JU5C
+- Alcoholic beverages, including duty K38U
 
 **Food retail deflators**
 
 Retailing purchases deflator does not cover the divide between UK and foreign produced raw materials, which would have different price movements but as the detailed data on quantities purchased from other countries is not available it is not possible. By adjusting the turnover and output by the proportion of non-food items that are sold, it is possible to minimise the distortion caused by non-food sales.
 
-Food wholesale deflators
+**Food wholesale deflators**
 
-The geometric mean is the square root of the food manufacturing value multiplied by food retail.
-
+The geometric mean is the square root of the food manufacturing value multiplied by food retail: $\sqrt{{Retail}\times{Manufacturing}}$
 
 **Non residential catering**  **deflators**
 
@@ -162,19 +164,14 @@ CPI catering and CPI alcoholic drinks are used, weighted by their split within t
 
 **Wider economy deflators**
 
-The measure used does not represent the full economy but rather non-public sector industries that are covered by the ABI/ABS. The main exclusions are financial sector and agriculture. **GDP Deflator is the m** easure of domestically generated inflation. Further details are available [here](https://www.gov.uk/government/collections/gdp-deflators-at-market-prices-and-money-gdp).
+The measure used does not represent the full economy but rather non-public sector industries that are covered by the ABI/ABS. The main exclusions are financial sector and agriculture. GDP Deflator is the measure of domestically generated inflation. Further details are available [here](https://www.gov.uk/government/collections/gdp-deflators-at-market-prices-and-money-gdp).
 
-## 6.        Quality changes
+## 6. Quality changes
 
-excludes quality changes
+Quality improvements in products can be measured as increases in output. Deflating by price indices ensures that most quality changes are captured as volume changes. Changes in volume include quality changes, whilst changes in price exclude quality changes.
 
-includes quality changes
+${Change\ in\ current\ price\ value} = {change\ in\ volume} \times {change\ in\ price}$
 
-Quality improvements in products can be measured as increases in output. Deflating by price indices ensures that most quality changes are captured as volume changes.
-
-
-
-Change in current price value **=** change in volume **x** change in price
 
 Retail productivity is possibly depressed by the omission of the non-market benefits offered by supermarkets, such as longer opening hours, and a greater product mix offered within stores. If more of the inputs are being spent improving the shopping environment then it will appear in the measure as inefficient use of these additional inputs and productivity will decrease.
 
@@ -236,11 +233,11 @@ External references
 
 ## Glossary of economic terms
 
-Current prices
+**Current prices**
 
-Prices not expressed in terms of the base year i.e. in today&#39;s terms.
+Prices not expressed in terms of the base year i.e. in today's terms.
 
-Constant prices
+**Constant prices**
 
 A series expressing value in terms of the prices of a single year, removing the effects of inflation.
 
