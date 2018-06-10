@@ -61,17 +61,28 @@ manu_latest <- abs_hist %>%
 
 ###2. update the input weights
 
-1. We can produce the latest input weights using `input_weights` on the ABS data we produced in section 1. Note that `input_weights` produces a dataset with no year variable. We might want to add one.
+1. We can produce the latest input weights using `input_weights` on the ABS data we produced in section 1.
 
 ```{r input_weights}
 
-iw <- input_weights(manu_latest, capex, purchases, employment_costs)
-iw$year <- min(manu_latest$year):max(manu_latest$year)
+iw <- input_weights(manu_latest, year, capex, purchases, employment_costs)
 
 head(iw)
 
 ```
 
 
-$\sqrt\frac{onething}{another}$
+##Input deflators
 
+We need to calculate all the input deflators
+
+ONS series used: 
+D7CW
+D7BU
+D7CA
+CBZW
+YBGB
+JVF4
+K37L
+MC35
+K37L

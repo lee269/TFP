@@ -13,7 +13,6 @@
 #' read_ONS("/economy/inflationandpriceindices/timeseries/l55o/mm23", 2005, 2016)
 read_ONS <- function(seriesuri, from, to){
 
-  if (length(seriesuri) == 1) {
     url <- paste("https://www.ons.gov.uk/generator?format=csv&uri=",
                  seriesuri,
                  "&series=&fromYear=",
@@ -23,34 +22,25 @@ read_ONS <- function(seriesuri, from, to){
                  "&frequency=years",
                  sep = "")
 
-    x <- read.csv(url)
-    colnames(x)[1] <- "year"
-    colnames(x) <- safe_names(colnames(x))
-    x <- x[-c(1:6), ]
+  if (length(seriesuri) == 1) {
 
-    return(x)
+    x <- read.csv(url, stringsAsFactors = FALSE)
 
   } else {
-    url <- as.list(paste("https://www.ons.gov.uk/generator?format=csv&uri=",
-                         seriesuri,
-                         "&series=&fromYear=",
-                         from,
-                         "&toYear=",
-                         to,
-                         "&frequency=years",
-                         sep = ""))
 
-  x <- purrr::map(url, read.csv) %>%
-       purrr::reduce(dplyr::bind_cols)
+    x <- purrr::map(url, read.csv, stringsAsFactors = FALSE) %>%
+      purrr::reduce(dplyr::bind_cols) %>%
+      dplyr::select(-c(seq(3,length(seriesuri)*2,2)))
 
-  x2 <- x[ ,seq(2,ncol(x),2)]
-  x2 <- dplyr::bind_cols(as.data.frame(x[, 1]), x2)
-  colnames(x2)[1] <- "year"
-  colnames(x2) <- safe_names(colnames(x2))
-  x2 <- x2[-c(1:6), ]
-
-  return(x2)
   }
+
+    colnames(x) <- c("year", x[1, 2:ncol(x) ])
+
+    x <- x %>%
+      dplyr::slice(6:n()) %>%
+      dplyr::mutate_all(as.numeric)
+
+    return(x)
 
 
 }

@@ -4,10 +4,12 @@
 \alias{input_weights}
 \title{calculate input weights for a sector}
 \usage{
-input_weights(data, capital, purchases, employment)
+input_weights(data, period, capital, purchases, employment)
 }
 \arguments{
 \item{data}{a dataset containing current price data}
+
+\item{period}{the period variable}
 
 \item{capital}{the capital variable}
 
